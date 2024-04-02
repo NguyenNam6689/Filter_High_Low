@@ -5,7 +5,7 @@ import numpy as np
 class test_test_highpass_filter(object):
     def __init__(self,image) -> None:
         self.image = image
-    def init_kernel(self, kernel_name:str):
+    def test_init_kernel(self, kernel_name:str):
         if kernel_name == "RobertCross":
             return self.show_SharpenedRobert()
         elif kernel_name == "RobertCross1":
@@ -81,15 +81,15 @@ if __name__ =='__main__':
     ax[0,0].imshow(image,cmap='gray')
     ## Su dung bo loc RobertCrossGradient
     # hien thi anh loc Robert theo huong thu 1
-    Robertcross1=test_test_highpass_filter(image).init_kernel("Sobel")
+    Robertcross1=test_test_highpass_filter(image).test_init_kernel("Sobel")
     ax[0,1].imshow(Robertcross1,cmap='gray')
     ax[0,1].set_title("Anh loc theo huong thu 1")
     # hien thi anh loc Robert theo huong thu 2
-    Robertcross2=test_test_highpass_filter(image).init_kernel("SobelX")
+    Robertcross2=test_test_highpass_filter(image).test_init_kernel("SobelX")
     ax[1,1].imshow(Robertcross2,cmap='gray')
     ax[1,1].set_title("Anh loc theo huong thu 2")
     # Ket qua anh loc sac net bang bo loc Robert
-    Robertcross=test_test_highpass_filter(image).init_kernel("SobelY")
+    Robertcross=test_test_highpass_filter(image).test_init_kernel("SobelY")
     ax[1,0].imshow(Robertcross,cmap='gray')
     ax[1,0].set_title("Anh cai thien bang bo loc Sobel")
     plt.savefig("filter_Robert.pdf",bbox_inches='tight')
